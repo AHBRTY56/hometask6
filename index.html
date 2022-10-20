@@ -8,6 +8,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather</title>
   </head>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <body>
     <div class="card">
       <form id="form">
@@ -19,8 +21,8 @@
           placeholder="Type a city..."
           id="search-text-input"
         />
-        <button id="press">Search</button>
-
+        <input type="submit" value="Search" id="press" />
+        <button class="currentLocation">Current</button>
         <span id="rain"> ⛅️ 🌈 ☀️</span>
         <ul>
           <li id="location">Kharkiv,Ukraine</li>
@@ -36,6 +38,7 @@
         </div>
       </form>
     </div>
+
     <script src="tech.js"></script>
   </body>
 </html>

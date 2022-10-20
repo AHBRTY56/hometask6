@@ -21,16 +21,6 @@ if (minutes < 10) {
 
 currentTime.innerHTML = `${day} ${hours}:${minutes} `;
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  let location = document.querySelector("#location");
-  location.innerHTML = `${searchInput.value}`;
-}
-
-let button = document.querySelector("#form");
-button.addEventListener("submit", search);
-
 function clicks(event) {
   event.preventDefault();
   let celLink = document.querySelector(".smile");
@@ -48,18 +38,36 @@ let button3 = document.querySelector("#fahrenheit-link");
 button3.addEventListener("click", press);
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let message = `There is ${temperature} deegres.`;
-  let rain = document.querySelector("#rain");
-  rain.innerHTML = message;
+  document.querySelector(".smile").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#location").innerHTML = response.data.name;
 }
-function showPossition(position) {
+function search(event) {
+  debugger;
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text-input");
+  let location = document.querySelector("#location");
+  location.innerHTML = `${searchInput.value}`;
+  let apiKey = "311f1f45fee82242ab4086372ab360f5";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+function getCurrentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = "b1a8336ff1e05b64da5625e4158fbea3";
+  let apiKey = "311f1f45fee82242ab4086372ab360f5";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
+function loadPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getCurrentPosition);
+}
+let form = document.querySelector("#form");
+form.addEventListener("submit", search);
 
-navigator.geolocation.getCurrentPosition(showPossition);
+let currentButton = document.querySelector(".currentLocation");
+currentButton.addEventListener("click", loadPosition);
