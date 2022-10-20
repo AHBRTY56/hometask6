@@ -29,7 +29,7 @@
   margin-top: 2px;
   font-size: 30px;
 }
-button {
+#press {
   padding: 12px;
   margin: 11px 12px;
   font-size: 15px;
@@ -39,7 +39,7 @@ button {
   margin-right: 70px;
   margin-left: 0px;
 }
-button:hover {
+#press:hover {
   background-color: grey;
 }
 #location {
