@@ -1,0 +1,70 @@
+.card {
+  border: solid black;
+  display: flex;
+  width: 41%;
+  margin: 40px 30px 80px;
+  padding: 50px auto;
+  text-align: left;
+  background-image: url(https://ae04.alicdn.com/kf/Hb267b36b11e34a008e70a2b39714dd6bE/3D.jpg);
+}
+.card:hover {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1vyxp5tp-d5FPdMghteKF2s7d31SXNqfuXQ&usqp=CAU);
+}
+.text {
+  padding: 10px 40px 3px;
+  margin: 10px;
+}
+#type {
+  margin-left: 30px;
+  font-size: 30px;
+}
+#search-text-input {
+  font-size: 25px;
+  padding: 13px;
+  margin: 10px 40px 10px 10px;
+  margin-right: 0px;
+}
+
+#rain {
+  margin-top: 2px;
+  font-size: 30px;
+}
+button {
+  padding: 12px;
+  margin: 11px 12px;
+  font-size: 15px;
+  text-align: inherit;
+  background-color: rgba(0, 0, 255, 0.532);
+  color: white;
+  margin-right: 70px;
+  margin-left: 0px;
+}
+button:hover {
+  background-color: grey;
+}
+#location {
+  font-size: 30px;
+  text-align: left;
+}
+#time {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 23px;
+}
+.smile {
+  font-size: 40px;
+  margin-left: 40px;
+}
+
+.sign {
+  padding-top: 3px;
+  font-size: 20px;
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+.wrapper {
+  display: flex;
+}

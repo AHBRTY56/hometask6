@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="card">
+      <form id="form">
+        <input
+          type="text"
+          class="text"
+          autocomplete="off"
+          autofocus="on"
+          placeholder="Type a city..."
+          id="search-text-input"
+        />
+        <button id="press">Search</button>
+
+        <span id="rain"> ⛅️ 🌈 ☀️</span>
+        <ul>
+          <li id="location">Kharkiv,Ukraine</li>
+          <li id="time">Wednesday 20:03</li>
+          <li id="type">🌞Sunny</li>
+        </ul>
+        <div class="wrapper">
+          <span class="smile"> 20 </span>
+          <span class="sign">
+            <a href="#" id="celsius-link">°C</a> |
+            <a href="#" id="fahrenheit-link"> °F </a>
+          </span>
+        </div>
+      </form>
+    </div>
+    <script src="tech.js"></script>
+  </body>
+</html>
